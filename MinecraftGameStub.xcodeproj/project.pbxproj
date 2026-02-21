@@ -11,6 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC8552DB2F49CB1200EB5492 /* MinecraftGameStub-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MinecraftGameStub-Info.plist"; sourceTree = "<group>"; };
 		ECB63CAA2F49C0A1002C1FEA /* MinecraftGameStub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinecraftGameStub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB63CB82F49C0B7002C1FEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -29,6 +30,7 @@
 		ECB63CA12F49C0A1002C1FEA = {
 			isa = PBXGroup;
 			children = (
+				EC8552DB2F49CB1200EB5492 /* MinecraftGameStub-Info.plist */,
 				ECB63CB82F49C0B7002C1FEA /* main.swift */,
 				ECB63CAB2F49C0A1002C1FEA /* Products */,
 			);
@@ -251,6 +253,8 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MinecraftGameStub-Info.plist";
+				INFOPLIST_KEY_GCSupportsGameMode = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -284,6 +288,8 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MinecraftGameStub-Info.plist";
+				INFOPLIST_KEY_GCSupportsGameMode = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
