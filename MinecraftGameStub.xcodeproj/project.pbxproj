@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ECB63CB92F49C0B8002C1FEA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB63CB82F49C0B7002C1FEA /* main.swift */; };
+		ECB63CB92F49C0B8002C1FEA /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB63CB82F49C0B7002C1FEA /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC8552DB2F49CB1200EB5492 /* MinecraftGameStub-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MinecraftGameStub-Info.plist"; sourceTree = "<group>"; };
 		ECB63CAA2F49C0A1002C1FEA /* MinecraftGameStub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinecraftGameStub.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECB63CB82F49C0B7002C1FEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ECB63CB82F49C0B7002C1FEA /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +31,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8552DB2F49CB1200EB5492 /* MinecraftGameStub-Info.plist */,
-				ECB63CB82F49C0B7002C1FEA /* main.swift */,
+				ECB63CB82F49C0B7002C1FEA /* Entry.swift */,
 				ECB63CAB2F49C0A1002C1FEA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,7 +116,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB63CB92F49C0B8002C1FEA /* main.swift in Sources */,
+				ECB63CB92F49C0B8002C1FEA /* Entry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
