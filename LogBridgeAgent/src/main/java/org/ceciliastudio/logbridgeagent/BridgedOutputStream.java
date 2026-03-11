@@ -25,7 +25,9 @@ public class BridgedOutputStream extends OutputStream {
         this.buffer.put((byte) b);
         if (b == '\n') {
             this.buffer.flip();
-            this.channel.write(this.buffer);
+            synchronized (this.channel) {
+                this.channel.write(this.buffer);
+            }
             this.buffer.clear();
             this.buffer.put((byte) (isError ? 0x01 : 0x00));
         }

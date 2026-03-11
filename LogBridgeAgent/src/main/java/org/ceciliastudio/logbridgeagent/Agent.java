@@ -5,12 +5,12 @@ import java.io.PrintStream;
 import java.lang.instrument.Instrumentation;
 import java.net.StandardProtocolFamily;
 import java.net.UnixDomainSocketAddress;
+import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Agent {
-
     public static void premain(String agentArgs, Instrumentation inst) {
         System.out.println("[GameStub LogBridge] Premain loaded. agentArgs: " + agentArgs);
         Path socketPath = Path.of(agentArgs);
@@ -20,15 +20,22 @@ public class Agent {
         }
 
         try {
-            SocketChannel socket = createSocket(socketPath);
-            System.setOut(new PrintStream(new BridgedOutputStream(socket, System.out, false)));
-            System.setErr(new PrintStream(new BridgedOutputStream(socket, System.err, true)));
+            SocketChannel channel = createSocketChannel(socketPath);
+            System.setOut(new PrintStream(new BridgedOutputStream(channel, System.out, false)));
+            System.setErr(new PrintStream(new BridgedOutputStream(channel, System.err, true)));
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                synchronized (channel) {
+                    try {
+                        channel.write(ByteBuffer.wrap(new byte[] {(byte) 0xFF}));
+                    } catch (IOException ignored) {}
+                }
+            }));
         } catch (IOException e) {
             System.err.println("[GameStub LogBridge] Failed to create socket: " + e.getMessage());
         }
     }
 
-    private static SocketChannel createSocket(Path path) throws IOException {
+    private static SocketChannel createSocketChannel(Path path) throws IOException {
         UnixDomainSocketAddress address = UnixDomainSocketAddress.of(path);
         SocketChannel socketChannel = SocketChannel.open(StandardProtocolFamily.UNIX);
         socketChannel.configureBlocking(false);
